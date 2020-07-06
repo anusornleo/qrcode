@@ -28,4 +28,14 @@ public class ProductService {
     public void saveProduct(Product product){
         productRepository.save(product);
     }
+
+
+    public Optional<Product> updateProduct(int id, Product customer) {
+        Optional<Product> productOptional = productRepository.findById(id);
+        if(!productOptional.isPresent()) {
+            return productOptional;
+        }
+        customer.setId(id);
+        return Optional.of(productRepository.save(customer));
+    }
 }

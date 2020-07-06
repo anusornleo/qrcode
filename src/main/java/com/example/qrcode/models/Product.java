@@ -18,7 +18,7 @@ public class Product {
     private String name;
     private String detail;
     private double price;
-    @Column(name = "imageurl")
+    @Column(name = "image_url")
     private String image;
 
     @OneToMany(mappedBy = "product")
@@ -93,6 +93,7 @@ public class Product {
                 ", name='" + name + '\'' +
                 ", detail='" + detail + '\'' +
                 ", price=" + price +
+                ", image="+ image+
                 '}';
     }
 }
